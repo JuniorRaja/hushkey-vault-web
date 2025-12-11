@@ -13,8 +13,9 @@ import { Documentation } from './components/pages/Documentation';
 import { ApiDocs } from './components/pages/ApiDocs';
 import { PrivacyPolicy } from './components/pages/PrivacyPolicy';
 import { SecurityWhitepaper } from './components/pages/SecurityWhitepaper';
+import { TermsOfService } from './components/pages/TermsOfService';
 
-type View = 'home' | 'docs' | 'api' | 'privacy' | 'security';
+type View = 'home' | 'docs' | 'api' | 'privacy' | 'security' | 'terms';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -38,6 +39,8 @@ const App: React.FC = () => {
         return <PrivacyPolicy />;
       case 'security':
         return <SecurityWhitepaper />;
+      case 'terms':
+        return <TermsOfService />;
       case 'home':
       default:
         return (
@@ -100,7 +103,9 @@ const App: React.FC = () => {
                           Join thousands of developers and privacy advocates who have switched to HushKey.
                       </p>
                       <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Button variant="primary" size="lg" pulse>Get Started Free</Button>
+                        <a href="https://hushkey.vercel.app">
+                          <Button variant="primary" size="lg" pulse>Get Started Free</Button>
+                        </a>
                       </div>
                       <p className="mt-6 text-sm text-gray-500">No credit card required. Import from LastPass supported.</p>
                     </ScrollReveal>

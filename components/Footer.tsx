@@ -21,9 +21,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               The secure, offline-first password manager that puts you in control. Open source principles, military-grade encryption.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Github className="h-5 w-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Mail className="h-5 w-5" /></a>
+              <a href="https://github.com/JuniorRaja/hushkey-vault-app" className="text-gray-400 hover:text-white transition-colors"><Github className="h-5 w-5" /></a>
+              <a href="mailto:contactme@prasannar.com" className="text-gray-400 hover:text-white transition-colors"><Mail className="h-5 w-5" /></a>
             </div>
           </div>
 
@@ -62,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 text-sm">© {new Date().getFullYear()} HushKey Security. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-600">
-             <button onClick={() => onNavigate('privacy')} className="hover:text-gray-400">Terms</button>
+             <button onClick={() => onNavigate('terms')} className="hover:text-gray-400">Terms</button>
              <button onClick={() => onNavigate('privacy')} className="hover:text-gray-400">Privacy</button>
              <button onClick={() => onNavigate('privacy')} className="hover:text-gray-400">Cookies</button>
           </div>

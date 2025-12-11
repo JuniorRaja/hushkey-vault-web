@@ -75,7 +75,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button variant="primary" size="sm" pulse>Get Started Free</Button>
+            <a href="https://hushkey.vercel.app">
+              <Button variant="primary" size="sm" pulse>Get Started Free</Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -104,7 +106,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
               </button>
             ))}
             <div className="pt-4">
-              <Button variant="primary" className="w-full" pulse>Get Started Free</Button>
+              <a href="https://hushkey.vercel.app">
+                <Button variant="primary" className="w-full" pulse>Get Started Free</Button>
+              </a>
             </div>
           </div>
         </div>
