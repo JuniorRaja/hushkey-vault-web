@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
 import { NavItem, SectionId } from '../types';
 import { Logo } from './Logo';
-import { useTheme } from './ThemeProvider';
 
 const navItems: NavItem[] = [
   { label: 'Features', href: `#${SectionId.FEATURES}` },
@@ -20,7 +19,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,15 +73,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
             </div>
           </div>
 
-          {/* Theme Toggle and CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
+          {/* CTA */}
+          <div className="hidden md:block">
             <a href="https://hushkey.vercel.app">
               <Button variant="primary" size="sm" pulse>Get Started Free</Button>
             </a>
