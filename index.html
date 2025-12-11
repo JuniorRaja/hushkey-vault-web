@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HushKey Vault - Your Digital Life, Secured</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              gray: {
+                850: '#1f2937',
+                900: '#111827',
+                950: '#030712', // Ultra dark background
+              },
+              primary: {
+                400: '#a78bfa',
+                500: '#8b5cf6', // Violet
+                600: '#7c3aed',
+                700: '#6d28d9',
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 8s ease-in-out infinite 2s',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 12s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { opacity: 1, boxShadow: '0 0 0px rgba(139, 92, 246, 0)' },
+                '50%': { opacity: .9, boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #030712;
+        color: #f3f4f6;
+        scroll-behavior: smooth;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(17, 24, 39, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+      }
+      .glass-panel:hover {
+        border-color: rgba(139, 92, 246, 0.3);
+        background: rgba(17, 24, 39, 0.85);
+      }
+      .gradient-text {
+        background: linear-gradient(to right, #a78bfa, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Animation Utilities */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      
+      /* Documentation specific styles */
+      .prose h1 { @apply text-4xl font-bold text-white mb-8 mt-4; }
+      .prose h2 { @apply text-2xl font-semibold text-white mb-4 mt-8 pb-2 border-b border-gray-800; }
+      .prose h3 { @apply text-xl font-medium text-gray-100 mb-3 mt-6; }
+      .prose p { @apply text-gray-400 leading-relaxed mb-4; }
+      .prose ul { @apply list-disc list-outside ml-6 text-gray-400 mb-4 space-y-2; }
+      .prose ol { @apply list-decimal list-outside ml-6 text-gray-400 mb-4 space-y-2; }
+      .prose code { @apply bg-gray-900 text-primary-400 px-1.5 py-0.5 rounded text-sm font-mono border border-gray-800; }
+      .prose pre { @apply bg-gray-900 p-4 rounded-lg border border-gray-800 overflow-x-auto mb-6 text-sm font-mono text-gray-300; }
+      .prose strong { @apply text-white font-semibold; }
+      .prose table { @apply w-full text-left border-collapse my-8; }
+      .prose th { @apply border-b border-gray-700 py-3 px-4 text-white font-semibold bg-gray-900/50; }
+      .prose td { @apply border-b border-gray-800 py-3 px-4 text-gray-400; }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
